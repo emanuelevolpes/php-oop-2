@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__. '/Product.php';
-class Category extends Product {
+require_once __DIR__. '/Type.php';
+
+class Category extends Type {
     public $category;
 }
