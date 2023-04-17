@@ -1,10 +1,10 @@
 <?php
 include_once __DIR__ . '/Models/Product.php';
 
-echo '<pre>' . var_dump($croccantini) . '</pre>';
-echo '<pre>' . var_dump($mangime) . '</pre>';
-echo '<pre>' . var_dump($voliera) . '</pre>';
-echo '<pre>' . var_dump($peluche) . '</pre>';
+// echo '<pre>' . var_dump($croccantini) . '</pre>';
+// echo '<pre>' . var_dump($mangime) . '</pre>';
+// echo '<pre>' . var_dump($voliera) . '</pre>';
+// echo '<pre>' . var_dump($peluche) . '</pre>';
 
 ?>
 
@@ -22,8 +22,9 @@ echo '<pre>' . var_dump($peluche) . '</pre>';
 </head>
 
 <body>
-    <h1>Boolshop</h1>
+    <h1 class="d-block text-center p-5">Boolshop</h1>
     <div class="container d-flex flex-wrap">
+        <h2 class="d-block ms-3" style="width: 100%;">I nostri prodotti</h2>
         <article>
             <div class="card m-3" style="width: 18rem;">
                 <h3><?php echo $croccantini->name ?></h3>
