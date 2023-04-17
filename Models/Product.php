@@ -10,7 +10,11 @@ class Product extends Category {
         $this->image = $_image;
         $this->name = $_name;
         $this->price = $_price;
-        // parent::__construct('');
+    }
+
+    public function print() {
+        // echo 'Nome prodotto:', get_class($this->name);
+        // echo 'Prezzo:', get_class($this->price);        
     }
 }
 
@@ -30,6 +34,7 @@ $peluche = new Product('img', 'Topini di peluche Trixie', 43.99);
 $peluche->category = 'Gatti';
 $peluche->type = 'Giochi';
 
+// $croccantini = new Product();
 // $croccantini->name = 'Royal Canin Mini Adult';
 // $croccantini->price = '€ 43,99';
 // $croccantini->category = 'Cane';
@@ -53,7 +58,7 @@ $peluche->type = 'Giochi';
 // $peluche->category = 'Cat';
 // $peluche->type = 'Game';
 
-echo '<pre>' . var_dump($croccantini) . '</pre>';
-echo '<pre>' . var_dump($mangime) . '</pre>';
-echo '<pre>' . var_dump($voliera) . '</pre>';
-echo '<pre>' . var_dump($peluche) . '</pre>';
+// echo '<pre>' . var_dump($croccantini) . '</pre>';
+// echo '<pre>' . var_dump($mangime) . '</pre>';
+// echo '<pre>' . var_dump($voliera) . '</pre>';
+// echo '<pre>' . var_dump($peluche) . '</pre>';
