@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../Traits/Name.php';
 
 /**
  * Product
@@ -8,8 +9,8 @@
  */
 class Product
 {
+    use Name;
     private $id;
-    private $name;
     private $description;
     private $category;
     private $price;
@@ -50,23 +51,6 @@ class Product
     public function set_id($_id)
     {
         $this->id = $_id;
-    }
-    /**
-     * Summary of get_name
-     * @return mixed|string $_name
-     */
-    public function get_name()
-    {
-        return $this->name;
-    }
-    /**
-     * Summary of set_name
-     * @param mixed $_name
-     * @return void
-     */
-    public function set_name($_name)
-    {
-        $this->name = $_name;
     }
     /**
      * Summary of get_description
