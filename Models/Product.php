@@ -1,64 +1,139 @@
 <?php
-require_once __DIR__. '/Category.php';
-class Product extends Category {
-    public $image;
-    public $name;
-    public $price;
 
-    public function __construct(string $_image, string $_name, float $_price) {
+/**
+ * Product
+ * Define the default product
+ * 
+ * @author Emanuele Volpes
+ */
+class Product
+{
+    private $id;
+    private $name;
+    private $description;
+    private $category;
+    private $price;
+    private $image;
 
-        $this->image = $_image;
+
+    /**
+     * Summary of __construct
+     * @param int $_id
+     * @param string $_name
+     * @param string $_description
+     * @param mixed $_category
+     * @param float $_price
+     * @param string $_image
+     */
+    public function __construct($_id, $_name, $_description, $_category, $_price, $_image)
+    {
+        $this->id = $_id;
         $this->name = $_name;
+        $this->description = $_description;
+        $this->category = $_category;
+        $this->price = $_price;
+        $this->image = $_image;
+    }
+    /**
+     * Summary of get_id
+     * @return int $_id
+     */
+    public function get_id()
+    {
+        return $this->id;
+    }
+    /**
+     * Summary of set_id
+     * @param int $_id
+     * @return void
+     */
+    public function set_id($_id)
+    {
+        $this->id = $_id;
+    }
+    /**
+     * Summary of get_name
+     * @return mixed|string $_name
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+    /**
+     * Summary of set_name
+     * @param mixed $_name
+     * @return void
+     */
+    public function set_name($_name)
+    {
+        $this->name = $_name;
+    }
+    /**
+     * Summary of get_description
+     * @return mixed|string $_description
+     */
+    public function get_description()
+    {
+        return $this->description;
+    }
+    /**
+     * Summary of set_description
+     * @param mixed $_description
+     * @return void
+     */
+    public function set_description($_description)
+    {
+        $this->description = $_description;
+    }
+    /**
+     * Summary of get_category
+     * @return mixed $_category
+     */
+    public function get_category()
+    {
+        return $this->category;
+    }
+    /**
+     * Summary of set_category
+     * @param mixed $_category
+     * @return void
+     */
+    public function set_category($_category)
+    {
+        $this->category = $_category;
+    }
+    /**
+     * Summary of get_price
+     * @return float|mixed $_price
+     */
+    public function get_price()
+    {
+        return $this->price;
+    }
+    /**
+     * Summary of set_price
+     * @param mixed $_price
+     * @return void
+     */
+    public function set_price($_price)
+    {
         $this->price = $_price;
     }
-
-    public function print() {
-        // echo 'Nome prodotto:', get_class($this->name);
-        // echo 'Prezzo:', get_class($this->price);        
+    /**
+     * Summary of get_image
+     * @return mixed|string $_image
+     */
+    public function get_image()
+    {
+        return $this->image;
+    }
+    /**
+     * Summary of set_image
+     * @param mixed $_image
+     * @return void
+     */
+    public function set_image($_image)
+    {
+        $this->image = $_image;
     }
 }
-
-$croccantini = new Product('img', 'Royal Canin Mini Adult', 43.99);
-$croccantini->category = 'Cani';
-$croccantini->type = 'Cibo';
-
-$mangime = new Product('img', 'Mangime per pesci Guppy in Fiocchi', 43.99);
-$mangime->category = 'Pesci';
-$mangime->type = 'Cibo';
-
-$voliera = new Product('img', 'Voliera Wilma in Legno', 43.99);
-$voliera->category = 'Uccelli';
-$voliera->type = 'Accessori';
-
-$peluche = new Product('img', 'Topini di peluche Trixie', 43.99);
-$peluche->category = 'Gatti';
-$peluche->type = 'Giochi';
-
-// $croccantini = new Product();
-// $croccantini->name = 'Royal Canin Mini Adult';
-// $croccantini->price = '€ 43,99';
-// $croccantini->category = 'Cane';
-// $croccantini->type = 'Food';
-
-// $mangime = new Product();
-// $mangime->name = 'Mangime per pesci Guppy in Fiocchi';
-// $mangime->price = '€ 2,95';
-// $mangime->category = 'Fish';
-// $mangime->type = 'Food';
-
-// $voliera = new Product();
-// $voliera->name = 'Voliera Wilma in Legno';
-// $voliera->price = '€ 184,99';
-// $voliera->category = 'Bird';
-// $voliera->type = 'Accessory';
-
-// $peluche = new Product();
-// $peluche->name = 'Topini di peluche Trixie';
-// $peluche->price = '€ 4,99';
-// $peluche->category = 'Cat';
-// $peluche->type = 'Game';
-
-// echo '<pre>' . var_dump($croccantini) . '</pre>';
-// echo '<pre>' . var_dump($mangime) . '</pre>';
-// echo '<pre>' . var_dump($voliera) . '</pre>';
-// echo '<pre>' . var_dump($peluche) . '</pre>';

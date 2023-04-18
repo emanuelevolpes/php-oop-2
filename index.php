@@ -1,11 +1,29 @@
 <?php
-include_once __DIR__ . '/Models/Product.php';
 
-// echo '<pre>' . var_dump($croccantini) . '</pre>';
-// echo '<pre>' . var_dump($mangime) . '</pre>';
-// echo '<pre>' . var_dump($voliera) . '</pre>';
-// echo '<pre>' . var_dump($peluche) . '</pre>';
+require_once __DIR__ . '/Models/Product.php';
+require_once __DIR__ . '/Models/Category.php';
+require_once __DIR__ . '/Models/Food.php';
 
+$category_dog = new Category('Dog', '<i class="fa-solid fa-dog"></i>');
+$category_cat = new Category('Cat', '<i class="fa-solid fa-cat"></i>');
+$category_bird = new Category('Bird', '<i class="fa-solid fa-dove"></i>');
+$category_fish = new Category('Fish', '<i class="fa-solid fa-fish"></i>');
+
+// var_dump($category_dog, $category_cat, $category_bird, $category_fish);
+
+$product1 = new Product(10, 'Guinzaglio', 'Lorem ipsum guinzaglio', $category_dog, 15.99, '#');
+$product2 = new Product(20, 'Osso di gomma', 'Lorem ipsum osso di gomma', $category_dog, 27.99, '#');
+$product3 = new Food(30, 'Croccantini', 'Lorem ipsum croccantini', $category_cat, 22.99, '#');
+$product3->set_ingredients('pollo, cartone, manzo');
+
+// var_dump($product1, $product2, $product3);
+
+
+$products = [
+    $product1,
+    $product2,
+    $product3
+];
 ?>
 
 <!DOCTYPE html>
@@ -15,112 +33,36 @@ include_once __DIR__ . '/Models/Product.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <!-- /bootstrap -->
-    <title>Boolshop</title>
+    <!-- fa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <h1 class="d-block text-center p-5">Boolshop</h1>
-    <div class="container d-flex flex-wrap">
-        <h2 class="d-block ms-3" style="width: 100%;">I nostri prodotti</h2>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $croccantini->name ?></h3>
-                <p><?php echo $croccantini->price ?></p>
-                <p><?php echo $croccantini->category ?></p>
-                <p><?php echo $croccantini->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $mangime->name ?></h3>
-                <p><?php echo $mangime->price ?></p>
-                <p><?php echo $mangime->category ?></p>
-                <p><?php echo $mangime->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $voliera->name ?></h3>
-                <p><?php echo $voliera->price ?></p>
-                <p><?php echo $voliera->category ?></p>
-                <p><?php echo $voliera->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $peluche->name ?></h3>
-                <p><?php echo $peluche->price ?></p>
-                <p><?php echo $peluche->category ?></p>
-                <p><?php echo $peluche->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $croccantini->name ?></h3>
-                <p><?php echo $croccantini->price ?></p>
-                <p><?php echo $croccantini->category ?></p>
-                <p><?php echo $croccantini->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $mangime->name ?></h3>
-                <p><?php echo $mangime->price ?></p>
-                <p><?php echo $mangime->category ?></p>
-                <p><?php echo $mangime->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $voliera->name ?></h3>
-                <p><?php echo $voliera->price ?></p>
-                <p><?php echo $voliera->category ?></p>
-                <p><?php echo $voliera->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $peluche->name ?></h3>
-                <p><?php echo $peluche->price ?></p>
-                <p><?php echo $peluche->category ?></p>
-                <p><?php echo $peluche->type ?></p>
-            </div>
-        </article> 
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $croccantini->name ?></h3>
-                <p><?php echo $croccantini->price ?></p>
-                <p><?php echo $croccantini->category ?></p>
-                <p><?php echo $croccantini->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $mangime->name ?></h3>
-                <p><?php echo $mangime->price ?></p>
-                <p><?php echo $mangime->category ?></p>
-                <p><?php echo $mangime->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $voliera->name ?></h3>
-                <p><?php echo $voliera->price ?></p>
-                <p><?php echo $voliera->category ?></p>
-                <p><?php echo $voliera->type ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="card m-3" style="width: 18rem;">
-                <h3><?php echo $peluche->name ?></h3>
-                <p><?php echo $peluche->price ?></p>
-                <p><?php echo $peluche->category ?></p>
-                <p><?php echo $peluche->type ?></p>
-            </div>
-        </article>    
+    <div class="container">
+        <h1 class="text-center">Pet Shop</h1>
+        <div class="row">
+            <?php foreach ($products as $product) : ?>
+                <div class="col-12 col-md-3">
+                    <div class="card">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $product->get_name(); ?></h5>
+                            <p class="card-text"><?php echo $product->get_description(); ?></p>
+                            <?php if (method_exists($product, 'get_ingredients')) : ?>
+                                <p>Ingredients: <?php
+                                                /** @var Food $product */
+                                                echo $product->get_ingredients()
+                                                ?></p>
+                            <?php endif; ?>
+                            <p>Price: <strong><?php echo $product->get_price(); ?></strong> €</p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </body>
 
