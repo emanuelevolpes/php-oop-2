@@ -4,6 +4,14 @@ require_once __DIR__ . '/Models/Product.php';
 require_once __DIR__ . '/Models/Category.php';
 require_once __DIR__ . '/Models/Food.php';
 
+// function weight($weight)
+// {
+//     if ($weight < 10) {
+//         throw new Exception('The weight must be more then 10kg');
+//     }
+//     return true;
+// }
+
 $category_dog = new Category('Dog', '<i class="fa-solid fa-dog"></i>');
 $category_cat = new Category('Cat', '<i class="fa-solid fa-cat"></i>');
 $category_bird = new Category('Bird', '<i class="fa-solid fa-dove"></i>');
@@ -15,7 +23,12 @@ $product1 = new Product(10, 'Guinzaglio', 'Lorem ipsum guinzaglio', $category_do
 $product2 = new Product(20, 'Osso di gomma', 'Lorem ipsum osso di gomma', $category_dog, 27.99, '#');
 $product3 = new Food(30, 'Croccantini', 'Lorem ipsum croccantini', $category_cat, 22.99, '#');
 $product3->set_ingredients('pollo, cartone, manzo');
-$product3->set_weight(20);
+$product3->set_weight(9);
+
+// try {
+// } catch (Exception $e) {
+//     echo 'Exception Message: ' . $e->getMessage();
+// }
 
 // var_dump($product1, $product2, $product3);
 
