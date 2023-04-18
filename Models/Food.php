@@ -3,7 +3,7 @@ require_once __DIR__ . '/Product.php';
 class Food extends Product
 {
     private $ingredients;
-    // private $weight;
+    private $weight;
 
     public function get_ingredients()
     {
@@ -13,12 +13,12 @@ class Food extends Product
     {
         $this->ingredients = $_ingredients;
     }
-    // public function get_weight()
-    // {
-    //     $this->weight;
-    // }
-    // public function set_weight($_weight)
-    // {
-    //     $this->weight = $_weight;
-    // }
+    public function get_weight()
+    {
+        return $this->weight;
+    }
+    public function set_weight($_weight)
+    {
+        $this->weight = $_weight;
+    }
 }

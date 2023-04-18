@@ -15,6 +15,7 @@ $product1 = new Product(10, 'Guinzaglio', 'Lorem ipsum guinzaglio', $category_do
 $product2 = new Product(20, 'Osso di gomma', 'Lorem ipsum osso di gomma', $category_dog, 27.99, '#');
 $product3 = new Food(30, 'Croccantini', 'Lorem ipsum croccantini', $category_cat, 22.99, '#');
 $product3->set_ingredients('pollo, cartone, manzo');
+$product3->set_weight(20);
 
 // var_dump($product1, $product2, $product3);
 
@@ -56,6 +57,12 @@ $products = [
                                                 /** @var Food $product */
                                                 echo $product->get_ingredients()
                                                 ?></p>
+                            <?php endif; ?>
+                            <?php if (method_exists($product, 'get_weight')) : ?>
+                                <p>Weight: <?php
+                                            /** @var Food $product */
+                                            echo $product->get_weight()
+                                            ?> kg</p>
                             <?php endif; ?>
                             <p>Price: <strong><?php echo $product->get_price(); ?></strong> €</p>
                         </div>
