@@ -18,7 +18,6 @@ $product3->set_ingredients('pollo, cartone, manzo');
 
 // var_dump($product1, $product2, $product3);
 
-
 $products = [
     $product1,
     $product2,
@@ -42,14 +41,15 @@ $products = [
 
 <body>
     <div class="container">
-        <h1 class="text-center">Pet Shop</h1>
+        <h1 class="text-center m-4">Pet Shop</h1>
         <div class="row">
             <?php foreach ($products as $product) : ?>
                 <div class="col-12 col-md-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $product->get_name(); ?></h5>
+                            <h3 class="card-title"><?php echo $product->get_name(); ?></h3>
+                            <h5><?php echo $product->get_category()->get_category_info(); ?></h5>
                             <p class="card-text"><?php echo $product->get_description(); ?></p>
                             <?php if (method_exists($product, 'get_ingredients')) : ?>
                                 <p>Ingredients: <?php

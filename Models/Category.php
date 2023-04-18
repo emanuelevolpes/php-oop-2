@@ -26,4 +26,8 @@ class Category
     {
         $this->icon = $_icon;
     }
+
+    public function get_category_info() {
+        return "{$this->icon} {$this->name}";
+    }
 }
